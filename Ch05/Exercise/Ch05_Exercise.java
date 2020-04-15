@@ -122,13 +122,16 @@ class Ch05_Exercise {
 		
 		// 배열 ballArr의 앞에서 3개의 수를 배열 ball3으로 복사한다.
 		/* (2) */
-		for (int i=0; i<ball3.length; i++) {
-			ball3[i] = ballArr[i];
-		}
+//		for (int i=0; i<ball3.length; i++) {
+//			ball3[i] = ballArr[i];
+//		}
+		// 답지에서 System.arraycopy를 이용한 게 더 적절해보임
+		System.arraycopy(ballArr, 0, ball3, 0, 3);
 		
 		for (int i=0; i<ball3.length; i++) {
-			System.out.println(ball3[i]);
+			System.out.print(ball3[i]);
 		}
+		System.out.println();
 	}
 	
 	/* Exercis 5-6. 다음은 거스름돈을 몇 개의 동전으로 지불할 수 있는지를 계산하는 문제이다.
@@ -188,9 +191,20 @@ class Ch05_Exercise {
 //			coin[i] -= coin[i]>=coinNum ? coinNum : coin[i];
 
 			/* 출제의도에 맞게 다시 해결 */
-			coinNum = money/coinUnit[i]<=coin[i] ? money/coinUnit[i] : coin[i];
-			coin[i] -= coinNum;
-			money -= coinUnit[i] * coinNum;
+//			coinNum = money/coinUnit[i]<=coin[i] ? money/coinUnit[i] : coin[i];
+//			coin[i] -= coinNum;
+//			money -= coinUnit[i] * coinNum;
+//			System.out.println(coinUnit[i]+"원 : "+coinNum);
+
+			/* 답안지의 가독성 좋은 답안 채택 */
+			coinNum = money/coinUnit[i];
+			if (coin[i] >= coinNum) {
+				coin[i] -= coinNum;
+			} else {
+				coinNum = coin[i];
+				coin[i] = 0;
+			}
+			money -= coinNum*coinUnit[i];
 			System.out.println(coinUnit[i]+"원 : "+coinNum);
 		}
 		
@@ -250,10 +264,27 @@ class Ch05_Exercise {
 		
 		System.out.println();
 		
+//		for (int i=0; i<star.length; i++) {
+//			for (int j=0; j<star[i].length; j++) {
+//				/* (1) 알맞은 코드를 넣어 완성하시오. */
+//				result[j][i] = star[star.length-i-1][j];
+//			}
+//		}
+		
+		/* 다른 방법으로 풀어보기 */
+//		for (int i=0; i<result.length; i++) {
+//			for (int j=0; j<result[i].length; j++) {
+//				result[i][j] = star[star.length-j-1][i];
+//			}
+//		}
+		
+		/* ★ 더 적합하다고 생각하는 답안지 방법 */
 		for (int i=0; i<star.length; i++) {
-			for (int j=0; j<star[i].length; j++) {
+			for (int j=0; j<star[i].length; j++) {	// star[i][j] 유지
 				/* (1) 알맞은 코드를 넣어 완성하시오. */
-				result[j][i] = star[star.length-i-1][j];
+				int x = j;
+				int y = star.length-1-i;
+				result[x][y] = star[i][j];			// star[i][j] 유지
 			}
 		}
 		
