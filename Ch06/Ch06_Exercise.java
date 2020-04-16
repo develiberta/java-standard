@@ -25,7 +25,7 @@ class Ch06_Exercise {
 				case  4: Exercise4(); break;
 				case  5: Exercise5(); break;
 				case  6: Exercise6(); break;
-				case  7: Exercise7(args); break;
+				case  7: Exercise7(); break;
 				case  8: Exercise8(); break;
 				case  9: Exercise9(); break;
 				case 10: Exercise10(); break;
@@ -110,7 +110,7 @@ class Ch06_Exercise {
 	/* Exercise 6-7. 문제 6-6에서 작성한 클래스 메서드 getDistance()를
 	 * MyPoint 클래스의 인스턴스 메서드로 정의하시오.
 	 */
-	private static void Exercise7(String[] args) {
+	private static void Exercise7() {
 		
 	}
 	
