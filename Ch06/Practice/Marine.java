@@ -22,7 +22,9 @@ class Marine {
 	}
 }
 /*
- * weaponUp() 메서드와 armorUp() 메서드에 static을 붙여야 한다.
+ * weapon 변수와 armor 변수에 static을 붙여야 한다.
  * 왜냐하면 모든 병사의 공격력과 방어력이 같아야 하기 때문이다.
+ * weaponUp() 메서드와 armorUp() 메서드에 static을 붙여야 한다.
+ * 그래야 static 변수를 호출할 수 있기 때문이다.
  * (붙이지 않는 경우 각 병사의 공격력과 방어력이 따로 설정된다.)
  */

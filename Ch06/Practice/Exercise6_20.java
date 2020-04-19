@@ -9,15 +9,20 @@
 class Exercise6_20 {
 	/* (1) shuffle 메서드를 작성하시오. */
 	static int[] shuffle(int[] arr) {
-		int rand = 0;
-		int tmp = 0;
+		/* 답안에는 유효성검사가 있어서 추가 */
+		if (arr==null || arr.length==0)
+			return arr;
+		
+// 		int rand = 0;
+//		int tmp = 0;
 		for (int i=0; i<arr.length; i++){
-			rand = (int)(Math.random()*arr.length);
-			tmp = arr[i];
+			/* 답안에는 rand와 tmp를 for문 안에서 선언 */
+			int rand = (int)(Math.random()*arr.length);
+			int tmp = arr[i];
 			arr[i] = arr[rand];
 			arr[rand] = tmp;
 		}
-	return arr;
+		return arr;
 	}
 		
 	public static void main(String[] args) {	

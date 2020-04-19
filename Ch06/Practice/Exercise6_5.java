@@ -35,6 +35,13 @@ class Student {
 	}
 	
 	String info() {
-		return name+","+num+","+ban+","+kor+","+eng+","+math+","+sum+","+avg;
+		return name
+		  +","+num
+		  +","+ban
+		  +","+kor
+		  +","+eng
+		  +","+math
+		  +","+sum
+		  +","+avg;
 	}
 }

@@ -10,8 +10,13 @@
 class Exercise6_22 {
 	/* (1) isNumber 메서드를 작성하시오. */
 	static boolean isNumber(String str) {
+		/* 답안에서는 유효성검사 먼저 진행 */
+		if (str==null || str.equals(""))
+			return false;
+		
 		for (int i=0; i<str.length(); i++) {
-			if (!('0'<=str.charAt(i) && str.charAt(i)<='9')) return false;
+			if (!('0'<=str.charAt(i) && str.charAt(i)<='9'))
+				return false;
 		}
 		return true;
 	}

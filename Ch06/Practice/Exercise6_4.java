@@ -45,14 +45,18 @@ class Student {
 	
 	/* (1) 알맞은 코드를 넣어 완성하시오. */
 	int getTotal() {
-		int result = 0;
-		result = kor + eng + math;
-		return result;
+//		int result = 0;
+//		result = kor + eng + math;
+//		return result;
+		/* 답안이 더 간결해서 첨부 */
+		return kor + eng + math;
 	}
 	
 	float getAverage() {
-		float result = 0.0f;
-		result = (int)((getTotal()/3.0f)*100)/100.0f;
-		return result;
+//		float result = 0.0f;
+//		result = (int)((getTotal()/3.0f)*10+0.5f)/10.0f;
+//		return result;
+		/* 답안이 더 간결해서 첨부 */
+		return (int)(getTotal()/3f*10+0.5f)/10f;
 	}
 }
