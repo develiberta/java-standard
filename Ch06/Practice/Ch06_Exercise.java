@@ -123,20 +123,6 @@ class Ch06_Exercise {
 	 */
 	private static void Exercise8() {
 		System.out.println("[PlayingCard class]");
-		int kind;
-		int num;
-	
-		static int width;
-		static int height;
-	
-		PlayingCard(int k, int n) {
-			kind = k;
-			num = n;
-		}
-	
-		public static void main(String args[]) {
-			PlayingCard card = new PlayingCard(1,1);
-		}
 	}
 	/*
 	 * 클래스변수 (static변수)	: width, height
@@ -150,23 +136,6 @@ class Ch06_Exercise {
 	 */
 	private static void Exercise9() {
 		System.out.println("[Marine class]");
-		int	x = 0, y = 0;			// Marine의 위치좌표(x,y)
-		int hp		 = 60;			// 현재 체력
-		int weapon	 = 6;			// 공격력
-		int armor	 = 0;			// 방어력
-	
-		void weaponUp() {
-			weapon++;
-		}
-	
-		void armorUp() {
-			armor++;
-		}
-		
-		void move(int x, int y) {
-			this.x = x;
-			this.y = y;
-		}
 	}
 	/*
 	 * weaponUp() 메서드와 armorUp() 메서드에 static을 붙여야 한다.
@@ -270,31 +239,6 @@ class Ch06_Exercise {
 	 */
 	private static void Exercise18() {
 		System.out.println("[MemberCall class]");
-		int iv = 10;
-		static int cv = 20;
-		
-		int iv2 = cv;
-//		static int cv2 = iv;			// 라인 A
-		
-		static void staticMethod1() {
-			System.out.println(cv);
-//			System.out.println(iv);		// 라인 B
-		}
-		
-		void instanceMethod1() {
-			System.out.println(cv);
-			System.out.println(iv);		// 라인 C
-		}
-		
-		static void staticMethod2() {
-			staticMethod1();
-//			instanceMethod1();			// 라인 D
-		}
-		
-		void instanceMethod2() {
-			staticMethod1();			// 라인E
-			instanceMethod1();
-		}
 	}
 	/*
 	 * 라인 A : static 변수는 instance 변수를 복사(대입)할 수 없음
