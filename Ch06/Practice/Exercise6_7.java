@@ -1,7 +1,7 @@
 /* Exercise 6-7. 문제 6-6에서 작성한 클래스 메서드 getDistance()를
  * MyPoint 클래스의 인스턴스 메서드로 정의하시오.
  */
- class Exercise6_7 {
+class Exercise6_7 {
 	public static void main(String args[]) {
 		MyPoint p = new MyPoint(1,1);
 		

@@ -1,19 +1,3 @@
-class Exercise6_4 {
-	public static void main(String args[]) {
-		Student s = new Student();
-		s.name = "홍길동";
-		s.ban = 1;
-		s.no = 1;
-		s.kor = 100;
-		s.eng = 60;
-		s.math = 76;
-		
-		System.out.println("이름 : " + s.name);
-		System.out.println("총점 : " + s.getTotal());
-		System.out.println("평균 : " + s.getAverage());
-	}
-}
-
 /* Exercise 6-3. 다음과 같은 멤버변수를 갖는 Student 클래스를 정의하시오.
  * 타입		변수명		설명
  * String	name		학생이름
@@ -35,6 +19,22 @@ class Exercise6_4 {
  *		반환타입	:	float
  *		매개변수	:	없음
  */
+class Exercise6_4 {
+	public static void main(String args[]) {
+		Student s = new Student();
+		s.name = "홍길동";
+		s.ban = 1;
+		s.no = 1;
+		s.kor = 100;
+		s.eng = 60;
+		s.math = 76;
+		
+		System.out.println("이름 : " + s.name);
+		System.out.println("총점 : " + s.getTotal());
+		System.out.println("평균 : " + s.getAverage());
+	}
+}
+
 class Student {
 	String name;		// 학생이름
 	int ban;			// 반
