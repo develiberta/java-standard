@@ -20,10 +20,16 @@ class SutdaDeck {
 	
 	SutdaDeck() {
 		/* (1) 배열 SutdaCard를 적절히 초기화 하시오. */
-		for (int i=0; i<CARD_NUM; i++) {
-			boolean isKwang = false;
-			if ((i==1-1 || i==3-1 || i==8-1) && i/10==0) isKwang = true;
-			cards[i] = new SutdaCard((i)%10+1, isKwang);
+//		for (int i=0; i<CARD_NUM; i++) {
+//			boolean isKwang = false;
+//			if ((i==1-1 || i==3-1 || i==8-1) && i/10==0) isKwang = true;
+//			cards[i] = new SutdaCard(i%10+1, isKwang);
+//		}
+		/* 답안의 내용이 더 적절해서 첨부 */
+		for (int i=0; i<cards.length; i++) {
+			int num = i%10+1;
+			boolean isKwang = (i<10) && (num==1 || num==3 || num==8);
+			cards[i] = new SutdaCard(num, isKwang);
 		}
 	}
 }

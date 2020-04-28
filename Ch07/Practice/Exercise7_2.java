@@ -36,10 +36,16 @@ class SutdaDeck {
 	
 	SutdaDeck() {
 		/* 문제 7-1의 답 (문제에선 생략함) */
-		for (int i=0; i<CARD_NUM; i++) {
-			boolean isKwang = false;
-			if ((i==1-1 || i==3-1 || i==8-1) && i/10==0) isKwang = true;
-			cards[i] = new SutdaCard((i)%10+1, isKwang);
+//		for (int i=0; i<CARD_NUM; i++) {
+//			boolean isKwang = false;
+//			if ((i==1-1 || i==3-1 || i==8-1) && i/10==0) isKwang = true;
+//			cards[i] = new SutdaCard(i%10+1, isKwang);
+//		}
+		/* 답안의 내용이 더 적절해서 첨부 */
+		for (int i=0; i<cards.length; i++) {
+			int num = i%10+1;
+			boolean isKwang = (i<10) && (num==1 || num==3 || num==8);
+			cards[i] = new SutdaCard(num, isKwang);
 		}
 	}
 	
@@ -47,10 +53,14 @@ class SutdaDeck {
 	
 	/* 배열 cards에 담긴 카드의 위치를 뒤섞는다. */
 	void shuffle() {
-		SutdaCard tmp = new SutdaCard();
+//		SutdaCard tmp = new SutdaCard();
 		for (int i=0; i<cards.length; i++) {
-			int j = (int)(Math.random()*(cards.length-1));
-			tmp = cards[i];
+//			int j = (int)(Math.random()*(cards.length-1));
+			/* 위의 식은 엄밀히는 틀림 */
+			int j = (int)(Math.random()*cards.length);
+//			tmp = cards[i];
+			/* 위와 같이 객체를 생성해야만 참조변수를 사용할 수 있는 것은 아님 */
+			SutdaCard tmp = cards[i];
 			cards[i] = cards[j];
 			cards[j] = tmp;
 		}
@@ -58,12 +68,17 @@ class SutdaDeck {
 	
 	/* 배열 cards에서 지정된 위치의 SutdaCard를 반환한다. */
 	SutdaCard pick(int index) {
+		/* 답안에서는 유효성 검사를 추가. 매개변수가 있는 메서드는 반드시 유효성 검사를 하라고 조언하고 있음 */
+		if (index<0 || index>=CARD_NUM) return null;
 		return cards[index];
 	}
 	
 	/* 배열 cards에서 임의의 위치의 SutdaCard를 반환한다. */
 	SutdaCard pick() {
-		return cards[(int)(Math.random()*(cards.length-1))];
+//		return cards[(int)(Math.random()*(cards.length-1))];
+		/* 위의 식은 엄밀히는 틀림 */
+		int index = (int)(Math.random()*cards.length);
+		return pick(index);	// 다소 비효율적이지만 코드의 중복 제거, 재사용성 높임 (객체지향적)
 	}
 	
 }	// SutdaDeck

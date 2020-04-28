@@ -19,10 +19,11 @@ class Product {
 
 class Tv extends Product {
 //	Tv() {}				/* [답] 컴파일 에러 발생하는 부분 */
-	// 컴파일러가 생성자의 첫 줄에 super();를 삽입하는데,
-	// 조상 클래스인 Product에는 Product()가 존재하지 않으며,
+	// 컴파일러가 생성자의 첫 줄에 super();를 추가하는데,
+	// 조상 클래스인 Product에는 Product()가 정의되어 있지 않으며,
 	// 다른 생성자가 있어서 컴파일러는 이 생성자를 자동 추가해주지 않는다.
-	// 코드를 수정하면 아래의 한 줄과 같다.
+	// 여기에서는 원래의 코드를 쓰고, Product 클래스에 Product() 생성자를 선언해도 되고,
+	// 다음과 같이 super(100)을 직접 추가해도 된다.
 	Tv() { super(100); }
 	
 	public String toString() {
