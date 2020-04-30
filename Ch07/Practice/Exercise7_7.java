@@ -1,14 +1,14 @@
 /* Exercise 7-7. ★ 다음의 코드를 실행했을 때 호출되는 생성자의 순서와 실행결과를 적으시오.
  * [호출되는 생성자의 순서]	Child() - Child(int x) - Parent() - Parent(int x) - Object
  *						호출은 이와 같이 되고, 실제 생성은 역순으로 생성
- * [실행결과]				Child 변수타입의 멤버변수 c에 든 값인, 1000 출력
+ * [실행결과]				c.x = 1000,		c.getX() = 200 (부모의 getX() 메서드가 실행됐으므로 부모의 x를 반환)
  */
 class Exercise7_7 {
 	public static void main(String[] args) {
 		Child c = new Child();
 		
-		System.out.println("c.x = " + c.x);				// ★ 200이 출력됨. 이유를 알 수 없음
-		System.out.println("c.getX() = " + c.getX());	// ★ getX() 메서드가 없다는 컴파일 에러. 이유를 알 수 없음
+		System.out.println("c.x = " + c.x);				// c.x = 1000
+		System.out.println("c.getX() = " + c.getX());	// c.getX() = 200
 	}
 }
 
