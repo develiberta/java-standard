@@ -12,13 +12,13 @@ class Sub extends Super {
 	int y = 4;
 	int z = 5;
 	
-//	String getLocation() {
-//		return super.getLocation() + ", z : " + z;
+	String getLocation() {
+		return super.getLocation() + ", z : " + z;
 //		return "x : " + x + ", y : " + y + ", z : " + z;
-//	}
+	}
 }
 
-class Test3 {
+class ParentMember {
     public static void main(String[] args) {
 		Sub s1 = new Sub();
 		Super s2 = new Super();

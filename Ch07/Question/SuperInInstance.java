@@ -11,7 +11,6 @@ class Sub1 extends Super {
 	Sub1() {
 		super();	// 생략 가능
 		super.x = 6;
-		System.out.println(super);
 	}
 	
 }
@@ -24,19 +23,17 @@ class Sub2 extends Super {
 	Sub2() {
 		super();
 		super.x = 7;
-		System.out.println(super);
 	}
 }
 
-class Test5 {
+class SuperInInstance {
     public static void main(String[] args) {
 		Super s1 = new Sub1();
 		Super s2 = new Sub2();
 		
 		System.out.println(s1.x);
 		System.out.println(s2.x);
-		System.out.println(s1);
-		System.out.println(s2);
+
     }
 }
 

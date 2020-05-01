@@ -18,7 +18,7 @@ class Sub extends Super {
 	
 }
 
-class Test4 {
+class SuperPrivateMethod {
     public static void main(String[] args) {
 		Sub s1 = new Sub();
 		Super s2 = new Sub();
