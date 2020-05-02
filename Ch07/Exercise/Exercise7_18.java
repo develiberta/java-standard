@@ -12,6 +12,9 @@ class Exercise7_18 {
 	
 	/* (1) action메서드를 작성하시오. */
 	static void action(Robot r) {
+		// action메서드 내에서는 실제로 받아온 인스턴스가 어떤 것인지 알 수 없다.
+		// 단지 Robot클래스 또는 그 자손클래스의 인스턴스일 것이라는 것만 알 수 있다.
+		// 그래서 instanceof연산자를 이용해야만 실제 인스턴스의 타입을 확인할 수 있다.
 		if(r instanceof DanceRobot) {
 			DanceRobot dr = (DanceRobot)r;
 			dr.dance();

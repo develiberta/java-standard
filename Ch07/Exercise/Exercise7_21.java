@@ -10,6 +10,10 @@
  * [답]
  * 1. Movable인터페이스를 구현한 클래스
  * 2. Movable인터페이스를 상속받은 인터페이스를 구현한 클래스
+ * 3. null
+ *
+ * [참고]
+ * 매개변수의 다형성
  */
 class Exercise7_21 {
 	public static void main(String args[]) {

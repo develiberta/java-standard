@@ -62,20 +62,22 @@ class Point {
 class Circle extends Shape {
 	double r;
 	
-	Circle(double r) {
-		this.r = r;
-	}
-	
-	Circle() {
+	// [by LSH] 생성자는 하나에 몰아주는 방식으로 만들기
+	// 그리고 몰아받은 생성자가 조상생성자를 호출하는 방식으로 만들기
+	Circle() {								// 답안에는 이 생성자 없음
 		this(0.0d);
 	}
 	
-	Circle(Point p) {
-		super(p);
-		this.r = 0.0d;
+	Circle(double r) {
+		this(new Point(0, 0), r);
+	}
+	
+	Circle(Point p) {						// 답안에는 이 생성자 없음
+		this(p, 0.0d);
 	}
 	
 	Circle(Point p, double r) {
+		// 조상의 멤버는 조상의 생성자가 초기화하도록 한다.
 		super(p);
 		this.r = r;
 	}
@@ -88,23 +90,22 @@ class Rectangle extends Shape {
 	double width;
 	double height;
 	
-	Rectangle(int width, int height) {
-		super();
-		this.width = width;
-		this.height = height;
-	}
-	
-	Rectangle() {
+	// [by LSH] 생성자는 하나에 몰아주는 방식으로 만들기
+	// 그리고 몰아받은 생성자가 조상생성자를 호출하는 방식으로 만들기
+	Rectangle() {								// 답안에는 이 생성자 없음
 		this(0, 0);
 	}
 	
-	Rectangle(Point p) {
-		super(p);
-		this.width = 0;
-		this.height = 0;
+	Rectangle(double width, double height) {
+		this(new Point(0,0), width, height);
 	}
 	
-	Rectangle(Point p, int width, int height) {
+	Rectangle(Point p) {						// 답안에는 이 생성자 없음
+		this(p, 0, 0);
+	}
+	
+	Rectangle(Point p, double width, double height) {
+		// 조상의 멤버는 조상의 생성자가 초기화하도록 한다.
 		super(p);
 		this.width = width;
 		this.height = height;
@@ -113,7 +114,9 @@ class Rectangle extends Shape {
 	double calcArea() { return width*height; }
 	
 	boolean isSquare() {
-		if (width==height) { return true; }
-		return false;
+		// if (width==height) { return true; }
+		// return false;
+		/* 답안이 더 적절해서 첨부 */
+		return width*height!=0 && width==height;
 	}
 }

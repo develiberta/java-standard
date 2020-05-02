@@ -43,11 +43,14 @@ class Buyer {
 			1.2 가진 돈이 충분하면, 제품의 가격을 가진 돈에서 빼고
 			1.3 장바구니에 구입한 물건을 담는다. (add메서드 호출)
 		 */
+		// 1.1 가진 돈과 물건의 가격을 비교해서 가진 돈이 적으면 메서드를 종료한다.
 		if(money<p.price) {
 			System.out.println("잔액이 부족하여 " + p + "을/를 살 수 없습니다.");
 			return;
 		}
+		// 1.2 가진 돈이 충분하면, 제품의 가격을 가진 돈에서 빼고
 		money -= p.price;
+		// 1.3 장바구니에 구입한 물건을 담는다. (add메서드 호출)
 		add(p);
 	}	// buy
 	
@@ -59,11 +62,16 @@ class Buyer {
 				1.1.3 새로운 장바구니와 기존의 장바구니를 바꾼다.
 			1.2 물건을 장바구니(cart)에 저장한다.그리고 i의 값을 1 증가시킨다.
 		 */
+		// 1-1 i의 값이 장바구니의 크기보다 길거나 크면
 		if(i>=cart.length) {
+			// 1.1.1 기존의 장바구니보다 2배 큰 새로운 배열을 생성한다.
 			Product[] newCart = new Product[cart.length*2];
+			// 1.1.2 기존의 장바구니의 내용을 새로운 배열에 복사한다.
 			System.arraycopy(cart, 0, newCart, 0, cart.length);
+			// 1.1.3 새로운 장바구니와 기존의 장바구니를 바꾼다.
 			cart = newCart;
 		}
+		// 1.2 물건을 장바구니(cart)에 저장한다.그리고 i의 값을 1 증가시킨다.
 		cart[i++] = p;
 	}	// add
 	
@@ -82,12 +90,17 @@ class Buyer {
 		}
 		
 		for (int j=0; j<cart.length; j++) {
+			/* 답안에서는 장바구니의 크기보다 물건의 개수가 적을 때를 고려 */
+			if(cart[j]==null) break;
+			// 1.1 장바구니에 담긴 물건들의 목록을 만들어 출력한다.
 			productList += (j==0?"":", ") + cart[j];
+			// 1.2 장바구니에 담긴 물건들의 가격을 모두 더해서 출력한다.
 			sum += cart[j].price;
 		}
 		
 		System.out.println("구입한 물건 : " + productList);
 		System.out.println("사용한 금액 : " + sum);
+		// 1.3 물건을 사고 남은 금액(money)을 출력한다.
 		System.out.println("남은 금액 : " + money);
 		
 	}	// summary
