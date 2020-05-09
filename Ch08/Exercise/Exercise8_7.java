@@ -18,7 +18,7 @@ class Exercise8_7 {
 	static void method(boolean b) {
 		try {
 			System.out.println(1);
-			if(b) System.exit(0);
+			if(b) System.exit(0);		// 이 경우에는 finally블럭이 수행되지 않음
 			System.out.println(2);
 		} catch(RuntimeException r) {
 			System.out.println(3);

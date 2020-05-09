@@ -27,7 +27,7 @@ class Exercise8_10 {
 			System.out.println(1);
 		} catch(NullPointerException e) {
 			System.out.println(2);
-			throw e;
+			throw e;						// 예외를 다시 발생시킴. 예외 되던지기(re-throwing)
 		} catch(Exception e) {
 			System.out.println(3);
 		} finally {

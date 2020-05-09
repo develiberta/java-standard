@@ -13,4 +13,9 @@
  *
  * [정답] d
  * d. method1메서드가 method2메서드를 호출했고 그 위치는 ExceptionEx18.java 파일의 8번째 줄이다.
+ *
+ * [해설]
+ * 예외의 종류는 ArithmeticException이고 0으로 나눠서 발생하였다.
+ * 예외가 발생한 곳은 method2이고 ExceptionEx18.java의 12번째 줄이다.
+ * 예외가 발생했을 당시의 호출스택을 보면 main-method1-method2의 순서로 호출되었음을 알 수 있다.
  */

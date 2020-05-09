@@ -31,6 +31,7 @@ class Exercise8_8 {
 				continue;
 			} catch(Exception e) {
 				System.out.println("처리 도중 문제가 발생했습니다. 다시 값을 입력해주세요.");
+				continue;
 			} finally {
 				/* */
 			}

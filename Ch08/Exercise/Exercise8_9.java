@@ -48,7 +48,7 @@ class UnsupportedFunctionException extends RuntimeException {
 		return ERR_CODE;
 	}
 	
-	public String getMessage() {
+	public String getMessage() {	// 조상의 메서드를 오버라이딩할 때에는, 가능하다면 조상의 메서드를 재활용하는 것이 좋음
 		return "[" + getErrorCode()+"] " + super.getMessage();
 	}
 	
