@@ -31,8 +31,8 @@ class SuperInInstance {
 		Super s1 = new Sub1();
 		Super s2 = new Sub2();
 		
-		System.out.println(s1.x);
-		System.out.println(s2.x);
+		System.out.println(s1.x);		// 6 출력
+		System.out.println(s2.x);		// 7 출력
 
     }
 }
