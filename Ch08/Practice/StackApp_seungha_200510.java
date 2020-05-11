@@ -61,15 +61,14 @@ class StringStack_seungha implements Stack_seungha {
 		// TODO Auto-generated method stub
 		boolean result = false;
 		try {
-			strArr[cnt++] = str;
+			strArr[cnt] = str;
+			cnt++;
 			return result=true;
 		} catch(IndexOutOfBoundsException e) {							// [조건] IndexOutOfBoundsException 예외를 처리하는 try-catch문을 포함하시오.
 			System.out.println("Stack이 가득 차서 넣을 수 없습니다.");
-			cnt--;
 			return result;
 		} catch(Exception e) {
 			System.out.println("Stack에 값을 넣을 수 없습니다.");
-			cnt--;
 			return result;
 		}
 	}
