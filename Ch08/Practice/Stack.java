@@ -1,5 +1,3 @@
-package practice.week06;
-
 /** [날짜] 2020-05-10
  *  [참고] 명품 JAVA Programming 인터페이스 단원 문제 변형
  *  [문제]
