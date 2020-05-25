@@ -95,18 +95,17 @@ public class Chapter11_seungha_200524
 		int midValue = (int)arrayList.get(midIndex);
 		System.out.println(midValue);
 		
-		List list = arrayList;
 		while(midValue != value ) {
 			
 			if(value<midValue) {
-				list = list.subList(0, midIndex);
-				System.out.println(list);
+				arrayList = new ArrayList(arrayList.subList(0, midIndex));
+				System.out.println(arrayList);
 			} else if(value>midValue) {
-				list = list.subList(midIndex, list.size());
-				System.out.println(list);
+				arrayList = new ArrayList(arrayList.subList(midIndex, arrayList.size()));
+				System.out.println(arrayList);
 			}
-			midIndex = list.size()/2;
-			midValue = (int)list.get(midIndex);
+			midIndex = arrayList.size()/2;
+			midValue = (int)arrayList.get(midIndex);
 			cnt++;
 		}
 			System.out.println(value);
