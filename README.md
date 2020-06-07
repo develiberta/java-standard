@@ -11,3 +11,7 @@ Java의 정석 3판 (저자 남궁성) 을 스터디하며 작성한 코드입�
 
 # java API
 jdk-8u241-docs-all\docs\api\index.html
+
+
+# java embedded src
+jdk1.8.0_221\src
