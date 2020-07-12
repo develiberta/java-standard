@@ -7,9 +7,12 @@ class Exercise9_3 {
 		String fileName = "";
 		
 		/* (1) 알맞은 코드를 넣어 완성하시오. */
-		int sep = fullPath.lastIndexOf("\\");
-		path = fullPath.substring(0,sep);
-		fileName = fullPath.substring(sep+1);
+		int pos = fullPath.lastIndexOf("\\");
+		
+		if(pos!=-1) {	// 해설 답안에 이 조건 추가 (substring에서 예외 발생 방지)
+			path = fullPath.substring(0,sep);
+			fileName = fullPath.substring(sep+1);
+		}
 		
 		System.out.println("fullPath : " + fullPath);
 		System.out.println("path : " + path);

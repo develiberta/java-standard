@@ -38,6 +38,13 @@ class Point3D {
 		Point3D point = (Point3D)obj;
 		if(this.x==point.x && this.y==point.y && this.z==point.z) return true;
 		return false;
+		
+		/* 해설 답안 */
+//		if(obj instanceof Point3D) {
+//			Point3D point = (Point3D)obj;
+//			return x==p.x && y==p.y && z==p.z;
+//		}
+//		return false;
 	}
 	
 	public String toString() {

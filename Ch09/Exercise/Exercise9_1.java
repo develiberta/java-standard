@@ -38,6 +38,14 @@ class SutdaCard {
 		if(this.num==card.num && this.isKwang==card.isKwang)
 			result = true;
 		return result;
+		
+		/* 해설 답안 */
+//		if(obj instanceof SutdaCard) {
+//			SutdaCard c = (SutdaCard)obj;
+//			return num==c.num && isKwang==c.isKwang;
+//		}
+//		
+//		return false;
 	}
 	
 	public String toString() {

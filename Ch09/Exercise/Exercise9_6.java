@@ -42,6 +42,9 @@ class Exercise9_6 {
 			for (int i=0; i<src.length(); i++) {
 				charArr[charArr.length-src.length()+i] = src.charAt(i);
 			}
+			/* 위 구문에 대한 해설 답안 */
+//			System.arraycopy(src.toCharArray(), 0, chArr, length-src.length(), src.length());
+
 			/* [참고] static String	copyValueOf(char[] data)
 					 Equivalent to valueOf(char[]).
 					 static String	copyValueOf(char[] data, int offset, int count)
@@ -67,6 +70,8 @@ class Exercise9_6 {
 					 Returns the string representation of the Object argument.
 			 */
 			result = result.valueOf(charArr);
+			/* 위 구문에 대한 해설 답안 */
+//			return new String(chArr);
 			
 //			// [참고] java.util.Formatter 를 이용하는 방법 (import java.util.Formatter 필요)
 //			Formatter fmt = new Formatter();

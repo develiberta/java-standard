@@ -12,15 +12,17 @@ class Exercise9_9 {
 	/* (1) delChar메서드를 작성하시오. */
 	static String delChar(String src, String delCh) {
 		
-		StringBuffer sb = new StringBuffer();
+//		StringBuffer sb = new StringBuffer();
+		StringBuffer sb = new StringBuffer(src.length());
 
 		for(int i=0; i<src.length(); i++) {
 			char ch = src.charAt(i);
-			if(delCh.indexOf(ch) == -1)
+			if(delCh.indexOf(ch) == -1)		// ★
 				sb.append(ch);
 		}
 		
-		return new String(sb);
+//		return new String(sb);
+		return sb.toString();	// StringBuffer에 저장된 내용을 String으로 반환
 	}
 
 	
