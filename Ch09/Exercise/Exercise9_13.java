@@ -29,6 +29,12 @@ public class Exercise9_13 {
 			}
 		}
 		
+		/* 해설 답안 */
+//		while((index=src.indexOf(key,pos)) != -1) {
+//			count++;
+//			pos = index + key.length();
+//		}
+		
 		return count;
 	}
 }

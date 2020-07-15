@@ -31,10 +31,25 @@ public class Exercise9_14 {
 			}
 			
 			/* (1) 알맞은 코드를 넣어 완성하시오. */
-			for (String phoneNum : phoneNumArr) {
+			for(String phoneNum : phoneNumArr) {
 				if(Pattern.matches("[0-9]*" + input + "[0-9]*", phoneNum.replace("-", "")))
 					list.add(phoneNum);
 			}
+			
+			/* 해설 답안 */
+//			String pattern = ".*" + input + ".*";	// input을 포함하는 모든 문자열
+//			Pattern p = Pattern.compile(pattern);
+//			
+//			for(int i=0; i<phoneNumArr.length; i++) {
+//				String phoneNum = phoneNumArr[i];
+//				String tmp = phoneNum.replace("-","");
+//				
+//				Matcher m = p.matcher(tmp);
+//				
+//				if(m.find()) {
+//					list.add(phoneNum);
+//				}
+//			}
 
 			if(list.size() > 0) {
 				System.out.println(list);
