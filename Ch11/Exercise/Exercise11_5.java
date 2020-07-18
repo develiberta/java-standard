@@ -30,8 +30,7 @@ class Student implements Comparable {	// implements Comparable 추가
 		return name + ", " + ban + ", " + no + ", " + kor + ", " + eng + ", " + math + ", " + getTotal() + ", " + getAverage();
 	}
 	
-	/* compareTo 메서드 추가 */
-	public int compareTo(Object o) {
+	public int compareTo(Object o) {	// compareTo 메서드 추가
 		if(o instanceof Student) {
 			Student tmp = (Student)o;
 			return name.compareTo(tmp.name);

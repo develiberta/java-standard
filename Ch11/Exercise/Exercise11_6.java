@@ -60,9 +60,8 @@ class Exercise11_6 {
 					Student s2 = (Student)o2;
 					
 					return (int)(s1.getAverage() - s2.getAverage());
-				} else {
-					return -1;
 				}
+				return -1;
 			}
 		});	
 		

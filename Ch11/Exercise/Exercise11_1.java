@@ -37,7 +37,7 @@ class Exercise11_1 {
 		cha.removeAll(list2);
 		
 		hap.addAll(list1);
-		hap.removeAll(kyo);
+		hap.removeAll(list2);
 		hap.addAll(list2);
 		
 		System.out.println("list1 = " + list1);

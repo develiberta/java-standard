@@ -51,7 +51,7 @@ class Student implements Comparable {
 
 class Exercise11_8 {
 	public static void calculateSchoolRank(List list) {
-		Collections.sort(list);	// 먼저 list를 총점기준 내림차순으로 정렬한다.
+		Collections.sort(list);	// 먼저 list를 총점기준 내림차순으로 정렬한다. ★
 		
 		int prevRank	= -1;		// 이전 전교등수
 		int prevTotal	= -1;		// 이전 총점
