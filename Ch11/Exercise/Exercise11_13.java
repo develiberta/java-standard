@@ -34,7 +34,7 @@ class Exercise11_13 {
 		
 		for(int i=0; i<pArr.length; i++) {
 			Player p = pArr[i];
-			rank.put(p, deck.getPoint(p));
+			rank.put(p, deck.getPoint(p));	// [by LSH] 일단 이렇게 put 한 후 자리가 결정됨
 			System.out.println(p + " " + deck.getPoint(p));
 		}
 		
