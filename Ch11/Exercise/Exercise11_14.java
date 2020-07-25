@@ -118,7 +118,7 @@ class Exercise11_14 {
 			}
 
 			System.out.println("====================================================");
-			System.out.println("총점 :" + koreanTotal + "" + englishTotal + "" + mathTotal + "" + total);
+			System.out.println("총점 :" + koreanTotal + " " + englishTotal + " " + mathTotal + " " + total);
 			System.out.println();
 		} else {
 			System.out.println("====================================================");
