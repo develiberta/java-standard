@@ -24,10 +24,11 @@ class CalendarEx7 {
 		System.out.println("     " + year + "년 " + month + "월");
 		System.out.println(" SU MO TU WE TH FR SA");
 		
+		// 시작일부터 마지막일까지 1일씩 증가시키면서 일을 출력
 		for(int n=1; sDay.before(eDay) || sDay.equals(eDay); sDay.add(Calendar.DATE, 1)) {
 			int day = sDay.get(Calendar.DATE);
 			System.out.print((day < 10)? "  " + day : " " + day);
-			if(n++ % 7 == 0) System.out.println();
+			if(n++ % 7 == 0) System.out.println();	// 7일치를 찍고 나서 줄을 바꾼다.
 		}
 	}
 }
