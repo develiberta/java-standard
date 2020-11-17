@@ -1,6 +1,9 @@
 import java.time.*;
 import java.time.temporal.*;
 
+import static java.time.DayOfWeek.*;
+import static java.time.temporal.TemporalAdjusters.*;
+
 /* Exercise 10-7. 2016년 12월 넷째주 화요일의 날짜를 아래의 실행결과와 같은 형식으로 출력하시오.
  *
  * [실행결과]
@@ -21,5 +24,10 @@ class Exercise10_7 {
 				System.out.println(date);
 			}
 		}
+		
+		/* 해설 답안 */
+		/*LocalDate*/ date = LocalDate.of(2016, 12, 1);
+		System.out.println(date.with(dayOfWeekInMonth(4, TUESDAY)));
+		
 	}
 }
