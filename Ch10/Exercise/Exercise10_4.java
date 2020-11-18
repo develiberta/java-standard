@@ -16,28 +16,42 @@ class Exercise10_4 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		String pattern = "yyyy/MM/dd";
+		String pattern0 = "yyyy/MM/dd";
+		String pattern1 = "입력하신 날짜는 E요일입니다.";
 		
 		Calendar cal = Calendar.getInstance();
 		cal.set(2007, 04, 11);
 		
-		DateFormat df0 = new SimpleDateFormat(pattern);
-		
-		DateFormat df1 = new SimpleDateFormat("입력하신 날짜는 E요일입니다.");
+		DateFormat df0 = new SimpleDateFormat(pattern0);
+		DateFormat df1 = new SimpleDateFormat(pattern1);
 		
 		Date example = cal.getTime();
+		Date date = null;
 		
 		while(true) {
+			System.out.println("날짜를 " + pattern0 + "의 형태로 입력해주세요. "
+							 + "(입력 예 : " + df0.format(example) + ")");
+			System.out.print(">> ");
 			try {	
-				System.out.println("날짜를 " + pattern + "의 형태로 입력해주세요. "
-								 + "(입력 예 : " + df0.format(example) + ")");
-				System.out.print(">> ");
-				Date date = df0.parse(scanner.nextLine());
-				System.out.println(df1.format(date));
+				date = df0.parse(scanner.nextLine());
 				break;
 			} catch(Exception e) {
 				continue;
 			}
 		}
+		System.out.println(df1.format(date));
+		
+		/* 해설 답안 */
+		do {
+			System.out.println("날짜를 " + pattern0 + "의 형태로 입력해주세요. "
+							 + "(입력 예 : " + df0.format(example) + ")");
+			System.out.print(">> ");
+			try {
+				date = df0.parse(scanner.nextLine());
+				break;
+			} catch(Exception e) {}
+		} while(true);
+		System.out.println(df1.format(date));
+		
 	}
 }
