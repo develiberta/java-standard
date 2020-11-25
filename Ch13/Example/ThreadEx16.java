@@ -37,8 +37,8 @@ class ThreadEx16 {
 }
 
 class RunImplEx16 implements Runnable {
-	boolean suspended = false;
-	boolean stopped = false;
+	volatile boolean suspended = false;
+	volatile boolean stopped = false;
 	
 	public void run() {
 		while(!stopped) {
@@ -48,6 +48,7 @@ class RunImplEx16 implements Runnable {
 					Thread.sleep(1000);	// [by LSH] 출력하는 단위 시간 관장
 				} catch(InterruptedException e) {}
 			}
+//			System.out.print("");
 		}
 		System.out.println(Thread.currentThread().getName() + " - stopped");
 	}
