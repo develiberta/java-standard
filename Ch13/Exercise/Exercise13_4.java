@@ -7,7 +7,11 @@
  * c. wait()에 의해서 일시정지 상태인 스레드
  * d. suspend()에 의해서 일시정지 상태인 스레드
  *
- * [정답] c, d
+ * [정답] c(틀림), d
  * c. notify() 또는 notifyAll() 에 의해 실행대기 상태(RUNNABLE)가 됨
  * d. resume() 에 의해 실행대기 상태(RUNNABLE)가 됨
+ *
+ * [해설] d
+ * suspend() 를 제외한 나머지 메서드들은 interrupt() 가 호출되면 InterruptedException 이 발생해서
+ * 일시정지 상태에서 벗어나 실행대기 상태가 된다. (try-catch 문으로 InterruptedException 을 처리해주어야 한다.)
  */

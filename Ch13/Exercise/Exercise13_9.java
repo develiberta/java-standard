@@ -35,3 +35,8 @@ class Exercise13_9_1 extends Thread {
 		System.out.println("카운트가 종료되었습니다.");
 	}
 }
+/* [해설]
+ * sleep()에 의해 스레드가 잠시 멈춰있을 때, interrupt() 를 호출하면
+ * InterruptedException() 이 발생되고 스레드의 interrupted 상태는 false 로 자동 초기화된다.
+ * 그래서 catch 블럭에 interrupt()를 추가로 넣어줘서 스레드의 interrupted 상태를 true 로 다시 바꿔줘야 한다.
+ */

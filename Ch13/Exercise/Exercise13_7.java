@@ -23,7 +23,7 @@ class Exercise13_7 {
 		stopped = true;	// 스레드를 중지시킨다.
 		
 		/* 다음을 추가 - 시작 */
-		th1.interrupt();
+		th1.interrupt();	// 일시정지 상태에 있는 스레드를 깨운다.
 		/* 다음을 추가 - 끝 */
 		
 		System.out.println("stopped");
@@ -43,19 +43,8 @@ class Thread5 extends Thread {
 	}
 }
 /*
- * [결과예측]
- * 0
- * 1
- * 2
- * 3
- * 4
- * 꽝 에러메시지
- *
- * [실행결과]
- * 0
- * 1
- * 2
- * 3
- * 4
- * 꽝 에러메시지
+ * [해설]
+ * Exercise13_7.stopped 의 값이 바뀌어도 for 문 내의 Thread.sleep(3*1000);
+ * 문장에 의해 일시정지 상태에 있는 경우, 시간이 지나서 일시정지 상태를 벗어날 때까지 for 문을 벗어날 수 없기 때문에
+ * 이러한 현상이 발생한다. 그래서 interrupt() 를 호출해서 자고 있는 스레드를 깨워야 즉시 정지하기 된다.
  */

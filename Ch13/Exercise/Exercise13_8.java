@@ -48,13 +48,12 @@ class Exercise13_8 {
 			while (true) {		
 				/* 1. interval(2초)마다 배열 data의 값 중 하나를 임의로 선택해서 */
 				int idx = (int) (Math.random() * data.length);
+				/* 2. words 에 저장한다. */
+				words.add(data[idx]);
 				
 				try {
 					sleep(interval);
 				} catch (Exception e) {}
-				
-				/* 2. words 에 저장한다. */
-				words.add(data[idx]);
 			}
 		}
 	}
