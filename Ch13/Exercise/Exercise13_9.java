@@ -20,12 +20,16 @@ class Exercise13_9_1 extends Thread {
 	public void run() {
 		int i = 10;
 		
-		while (i!=10 && !isInterrupted()) {
+		while (i!=0 && !isInterrupted()) {
 			System.out.println(i--);
 			
 			try {
 				Thread.sleep(1000);	// 1초 지연
-			} catch(InterruptedException e) {}
+			} catch(InterruptedException e) {
+				/* 다음을 추가 - 시작 */
+				interrupt();
+				/* 다음을 추가 - 끝 */
+			}
 		}
 		
 		System.out.println("카운트가 종료되었습니다.");
