@@ -9,5 +9,5 @@
  *
  * [정답] c, d
  * c. notify() 또는 notifyAll() 에 의해 실행대기 상태(RUNNABLE)가 됨
- * f. resume() 에 의해 실행대기 상태(RUNNABLE)가 됨
+ * d. resume() 에 의해 실행대기 상태(RUNNABLE)가 됨
  */
