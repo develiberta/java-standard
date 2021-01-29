@@ -30,5 +30,19 @@ class Exercise14_6 {
                 )
         );
         System.out.printf("%s : %d", stringMax, lengthMax);
+		System.out.println();
+		
+		/* 모법담안 */
+		Stream<String> strStream3 = Stream.of(strArr);
+		
+		strStream3.map(String::length)	// strStream3.map(s -> s.length())
+				  .sorted(Comparator.reverseOrder())
+				  .limit(1).forEach(System.out::println);
+				  
+		/* 참고 : 가장 긴 문자열 그 자체를 출력 */
+		Stream<String> strStream4 = Stream.of(strArr);
+		
+		strStream4.sorted(Comparator.comparingInt(String::length).reversed())
+				  .limit(1).forEach(System.out::println);
     }
 }
